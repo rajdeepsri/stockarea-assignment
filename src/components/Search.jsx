@@ -22,8 +22,8 @@ const Search = () => {
         const clusterMatch = item.cluster
           .toLowerCase()
           .startsWith(searchTerm.toLowerCase());
-        const space = toString(item.space_available);
-        const spaceMatch = space.startsWith(searchTerm.toLowerCase());
+        const spaceMatch = item.space_available >= parseInt(searchTerm);
+
         return nameMatch || cityMatch || clusterMatch || spaceMatch;
       });
     }
